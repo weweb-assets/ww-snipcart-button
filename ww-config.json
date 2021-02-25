@@ -17,6 +17,13 @@
                 "type": "Textarea",
                 "bindable": true
             },
+            "url": {
+                "label": {
+                    "en": "Url"
+                },
+                "type": "Textarea",
+                "bindable": true
+            },
             "name": {
                 "label": {
                     "en": "Name"
