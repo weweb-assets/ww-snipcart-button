@@ -5,10 +5,46 @@
     },
     "editor": {
         "label": {
-            "en": "My element"
+            "en": "Snipcart button"
         },
         "menuOptions": {},
         "styleOptions": {},
-        "settingsOptions": {}
+        "settingsOptions": {
+            "id": {
+                "label": {
+                    "en": "Id"
+                },
+                "type": "Textarea",
+                "bindable": true
+            },
+            "name": {
+                "label": {
+                    "en": "Name"
+                },
+                "type": "Textarea",
+                "bindable": true
+            },
+            "price": {
+                "label": {
+                    "en": "Price"
+                },
+                "type": "Textarea",
+                "bindable": true
+            },
+            "description": {
+                "label": {
+                    "en": "Description"
+                },
+                "type": "Textarea",
+                "bindable": true
+            },
+            "image": {
+                "label": {
+                    "en": "Snipcart image"
+                },
+                "type": "Image",
+                "bindable": true
+            }
+        }
     }
 }
