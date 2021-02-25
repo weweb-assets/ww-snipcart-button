@@ -5,6 +5,7 @@
             :wwProps="{}"
             class="snipcart-add-item"
             :data-item-id="content.id"
+            :data-item-url="content.url"
             :data-item-price="content.price"
             :data-item-description="content.description"
             :data-item-image="content.image"
@@ -21,6 +22,7 @@ export default {
     wwDefaultContent: {
         button: wwLib.element({ type: 'ww-button', content: { text: { en: 'Add to cart' } } }),
         itemId: 'mr-toucan',
+        url: '/MrToucan',
         name: 'Mr. Toucan',
         price: '99.99',
         description:
