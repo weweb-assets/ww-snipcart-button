@@ -1,5 +1,4 @@
 <template>
-    <div>
         <wwObject
             v-bind="content.button"
             :wwProps="{}"
@@ -11,7 +10,6 @@
             :data-item-image="content.image"
             :data-item-name="content.name"
         ></wwObject>
-    </div>
 </template>
 
 <script>
