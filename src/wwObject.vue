@@ -37,10 +37,10 @@ export default {
     },
     watch: {
         'content.customProps'() {
-            const props = JSON.parse(this.content.customProps);
-            for (const prop of Object.keys(props)) {
-                this.$el.setAttribute(prop, props[prop]);
-            }
+            // const props = JSON.parse(this.content.customProps);
+            // for (const prop of Object.keys(props)) {
+            //     this.$el.setAttribute(prop, props[prop]);
+            // }
         },
     },
     computed: {
@@ -58,13 +58,10 @@ export default {
         };
     },
     mounted() {
-        const props = JSON.parse(this.content.customProps);
-        for (const prop of Object.keys(props)) {
-            this.$el.setAttribute(prop, props[prop]);
-        }
-        if (this.content.globalCurrency && !this.isEditing) {
-            window.Snipcart.api.session.setCurrency(this.content.globalCurrency);
-        }
+        // const props = JSON.parse(this.content.customProps);
+        // for (const prop of Object.keys(props)) {
+        //     this.$el.setAttribute(prop, props[prop]);
+        // }
     },
 };
 </script>
