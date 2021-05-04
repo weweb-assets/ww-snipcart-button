@@ -51,6 +51,32 @@
                 },
                 "type": "Image",
                 "bindable": true
+            },
+            "customProps": {
+                "path": "customProps",
+                "label": { "en": "Custom props", "fr": "Custom props" },
+                "type": "List",
+                "options": {
+                    "options": [
+                        {
+                            "path": "property",
+                            "type": "Text",
+                            "options": {
+                                "placeholder": "Property"
+                            },
+                            "bindable": true
+                        },
+                        {
+                            "path": "value",
+                            "type": "Text",
+                            "options": {
+                                "placeholder": "Value"
+                            },
+                            "bindable": true
+                        }
+                    ]
+                },
+                "bindable": true
             }
         }
     }
