@@ -35,16 +35,16 @@ export default {
     watch: {
         'content.customProps'() {
             const props = JSON.parse(this.content.customProps);
-            // for (const prop of Object.keys(props)) {
-            //     this.$el.setAttribute(prop, props[prop]);
-            // }
+            for (const prop of Object.keys(props)) {
+                this.$el.setAttribute(prop, props[prop]);
+            }
         },
     },
     mounted() {
         const props = JSON.parse(this.content.customProps);
-        // for (const prop of Object.keys(props)) {
-        //     this.$el.setAttribute(prop, props[prop]);
-        // }
+        for (const prop of Object.keys(props)) {
+            this.$el.setAttribute(prop, props[prop]);
+        }
     },
 };
 </script>
