@@ -1,21 +1,18 @@
 <template>
-    <div @mouseenter="log">
-        <wwObject
-            ref="el"
-            v-bind="content.button"
-            :wwProps="{}"
-            class="snipcart-add-item"
-            :data-item-id="content.id"
-            :data-item-url="content.url"
-            :data-item-price="content.price"
-            :data-item-description="content.description"
-            :data-item-image="content.image"
-            :data-item-name="content.name"
-            :data-customProps="customProps"
-        >
-            ></wwObject
-        >
-    </div>
+    <wwObject
+        ref="el"
+        v-bind="content.button"
+        :wwProps="{}"
+        class="snipcart-add-item"
+        :data-item-id="content.id"
+        :data-item-url="content.url"
+        :data-item-price="content.price"
+        :data-item-description="content.description"
+        :data-item-image="content.image"
+        :data-item-name="content.name"
+    >
+        ></wwObject
+    >
 </template>
 
 <script>
@@ -40,8 +37,10 @@ export default {
     },
     watch: {
         'content.customProps'() {
-            this.customProps = JSON.parse(this.content.customProps);
-            console.log(this.customProps);
+            const props = JSON.parse(this.content.customProps);
+            for (const prop of Object.keys(props)) {
+                this.$el.setAttribute(prop, props[prop]);
+            }
         },
     },
     computed: {
@@ -58,17 +57,11 @@ export default {
             customProps: '',
         };
     },
-    methods: {
-        log() {
-            // console.log(this.content.customProps);
-
-            const props = JSON.parse(this.content.customProps);
-
-            console.log(this.$refs.el);
-            this.customProps = props;
-        },
-    },
     mounted() {
+        const props = JSON.parse(this.content.customProps);
+        for (const prop of Object.keys(props)) {
+            this.$el.setAttribute(prop, props[prop]);
+        }
         if (this.content.globalCurrency && !this.isEditing) {
             window.Snipcart.api.session.setCurrency(this.content.globalCurrency);
         }
