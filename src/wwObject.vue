@@ -19,9 +19,6 @@
 export default {
     props: {
         content: { type: Object, required: true },
-        /* wwEditor:start */
-        wwEditorState: Object,
-        /* wwEditor:end */
     },
     wwDefaultContent: {
         button: wwLib.element({ type: 'ww-button', content: { text: { en: 'Add to cart' } } }),
@@ -42,20 +39,6 @@ export default {
             //     this.$el.setAttribute(prop, props[prop]);
             // }
         },
-    },
-    computed: {
-        isEditing() {
-            /* wwEditor:start */
-            return this.wwEditorState.editMode === wwLib.wwEditorHelper.EDIT_MODES.EDITION;
-            /* wwEditor:end */
-            // eslint-disable-next-line no-unreachable
-            return false;
-        },
-    },
-    data() {
-        return {
-            customProps: '',
-        };
     },
     mounted() {
         const props = JSON.parse(this.content.customProps);
