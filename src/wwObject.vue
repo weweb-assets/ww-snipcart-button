@@ -37,7 +37,7 @@ export default {
     },
     watch: {
         'content.customProps'() {
-            // const props = JSON.parse(this.content.customProps);
+            const props = JSON.parse(this.content.customProps);
             // for (const prop of Object.keys(props)) {
             //     this.$el.setAttribute(prop, props[prop]);
             // }
@@ -58,7 +58,7 @@ export default {
         };
     },
     mounted() {
-        // const props = JSON.parse(this.content.customProps);
+        const props = JSON.parse(this.content.customProps);
         // for (const prop of Object.keys(props)) {
         //     this.$el.setAttribute(prop, props[prop]);
         // }
