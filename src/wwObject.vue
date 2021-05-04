@@ -34,14 +34,22 @@ export default {
     },
     watch: {
         'content.customProps'() {
+            if (!this.content.customProps || !this.content.customProps.length) return;
+
             const props = JSON.parse(this.content.customProps);
+            if (!props) return;
+
             for (const prop of Object.keys(props)) {
                 this.$el.setAttribute(prop, props[prop]);
             }
         },
     },
     mounted() {
+        if (!this.content.customProps || !this.content.customProps.length) return;
+
         const props = JSON.parse(this.content.customProps);
+        if (!props) return;
+
         for (const prop of Object.keys(props)) {
             this.$el.setAttribute(prop, props[prop]);
         }
