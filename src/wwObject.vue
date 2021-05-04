@@ -1,21 +1,21 @@
 <template>
-    <wwObject
-        ref="el"
-        v-bind="content.button"
-        :wwProps="{}"
-        class="snipcart-add-item"
-        :data-item-id="content.id"
-        :data-item-url="content.url"
-        :data-item-price="content.price"
-        :data-item-description="content.description"
-        :data-item-image="content.image"
-        :data-item-name="content.name"
-        data-item-custom1-name="Frame color"
-        data-item-custom1-options="Black|Brown|Gold"
-        :data-customProps="customProps"
-    >
-        ></wwObject
-    >
+    <div @mouseenter="log">
+        <wwObject
+            ref="el"
+            v-bind="content.button"
+            :wwProps="{}"
+            class="snipcart-add-item"
+            :data-item-id="content.id"
+            :data-item-url="content.url"
+            :data-item-price="content.price"
+            :data-item-description="content.description"
+            :data-item-image="content.image"
+            :data-item-name="content.name"
+            :data-customProps="customProps"
+        >
+            ></wwObject
+        >
+    </div>
 </template>
 
 <script>
@@ -41,6 +41,7 @@ export default {
     watch: {
         'content.customProps'() {
             this.customProps = JSON.parse(this.content.customProps);
+            console.log(this.customProps);
         },
     },
     computed: {
@@ -56,6 +57,16 @@ export default {
         return {
             customProps: '',
         };
+    },
+    methods: {
+        log() {
+            // console.log(this.content.customProps);
+
+            const props = JSON.parse(this.content.customProps);
+
+            console.log(this.$refs.el);
+            this.customProps = props;
+        },
     },
     mounted() {
         if (this.content.globalCurrency && !this.isEditing) {
