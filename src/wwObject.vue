@@ -1,6 +1,5 @@
 <template>
     <wwObject
-        ref="el"
         v-bind="content.button"
         :wwProps="{}"
         class="snipcart-add-item"
@@ -11,8 +10,7 @@
         :data-item-image="content.image"
         :data-item-name="content.name"
     >
-        ></wwObject
-    >
+    </wwObject>
 </template>
 
 <script>
@@ -29,26 +27,26 @@ export default {
         description:
             'The toco toucan (Ramphastos toco), also known as the common toucan or giant toucan, is the largest and probably the best known species in the toucan family. It is found in semi-open habitats throughout a large part of central and eastern South America. It is a common attraction in zoos.',
         image: null,
-        customProps: [],
+        customProps: '',
         globalCurrency: 'usd',
     },
     watch: {
-        // 'content.customProps'() {
-        //     if (!this.content.customProps || !this.content.customProps.length) return;
-        //     const props = JSON.parse(this.content.customProps);
-        //     if (!props) return;
-        //     for (const prop of Object.keys(props)) {
-        //         this.$el.setAttribute(prop, props[prop]);
-        //     }
-        // },
+        'content.customProps'() {
+            if (!this.content.customProps || !this.content.customProps.length) return;
+            const props = JSON.parse(this.content.customProps);
+            if (!props) return;
+            for (const prop of Object.keys(props)) {
+                this.$el.setAttribute(prop, props[prop]);
+            }
+        },
     },
     mounted() {
-        // if (!this.content.customProps || !this.content.customProps.length) return;
-        // const props = JSON.parse(this.content.customProps);
-        // if (!props) return;
-        // for (const prop of Object.keys(props)) {
-        //     this.$el.setAttribute(prop, props[prop]);
-        // }
+        if (!this.content.customProps || !this.content.customProps.length) return;
+        const props = JSON.parse(this.content.customProps);
+        if (!props) return;
+        for (const prop of Object.keys(props)) {
+            this.$el.setAttribute(prop, props[prop]);
+        }
     },
 };
 </script>
