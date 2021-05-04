@@ -31,22 +31,40 @@ export default {
         globalCurrency: 'usd',
     },
     watch: {
+        // 'content.customProps'() {
+        //     if (!this.content.customProps || !this.content.customProps.length) return;
+        //     const props = JSON.parse(this.content.customProps);
+        //     if (!props) return;
+        //     for (const prop of Object.keys(props)) {
+        //         this.$el.setAttribute(prop, props[prop]);
+        //     }
+        // },
         'content.customProps'() {
             if (!this.content.customProps || !this.content.customProps.length) return;
-            const props = JSON.parse(this.content.customProps);
-            if (!props) return;
-            for (const prop of Object.keys(props)) {
-                this.$el.setAttribute(prop, props[prop]);
+            const props = this.content.customProps.split('data-item');
+
+            for (let item of props) {
+                item = 'data-item' + item;
+                item.trim();
+                let prop = item.split(':');
+
+                this.$el.setAttribute(prop[0], prop[1]);
             }
+
+            // console.log(props);
+            // if (!props) return;
+            // for (const prop of Object.keys(props)) {
+            //     this.$el.setAttribute(prop, props[prop]);
+            // }
         },
     },
     mounted() {
-        if (!this.content.customProps || !this.content.customProps.length) return;
-        const props = JSON.parse(this.content.customProps);
-        if (!props) return;
-        for (const prop of Object.keys(props)) {
-            this.$el.setAttribute(prop, props[prop]);
-        }
+        // if (!this.content.customProps || !this.content.customProps.length) return;
+        // const props = JSON.parse(this.content.customProps);
+        // if (!props) return;
+        // for (const prop of Object.keys(props)) {
+        //     this.$el.setAttribute(prop, props[prop]);
+        // }
     },
 };
 </script>
