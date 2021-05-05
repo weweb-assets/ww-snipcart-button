@@ -28,43 +28,30 @@ export default {
             'The toco toucan (Ramphastos toco), also known as the common toucan or giant toucan, is the largest and probably the best known species in the toucan family. It is found in semi-open habitats throughout a large part of central and eastern South America. It is a common attraction in zoos.',
         image: null,
         customProps: '',
-        globalCurrency: 'usd',
     },
     watch: {
-        // 'content.customProps'() {
-        //     if (!this.content.customProps || !this.content.customProps.length) return;
-        //     const props = JSON.parse(this.content.customProps);
-        //     if (!props) return;
-        //     for (const prop of Object.keys(props)) {
-        //         this.$el.setAttribute(prop, props[prop]);
-        //     }
-        // },
         'content.customProps'() {
+            this.addAttribute();
+        },
+    },
+    methods: {
+        addAttribute() {
             if (!this.content.customProps || !this.content.customProps.length) return;
             const props = this.content.customProps.split('data-item');
 
             for (let item of props) {
                 item = 'data-item' + item;
-                item.trim();
                 let prop = item.split(':');
 
-                this.$el.setAttribute(prop[0], prop[1]);
-            }
+                const attr = prop[0] ? prop[0].trim() : null;
+                const value = prop[1] ? prop[1].trim() : null;
 
-            // console.log(props);
-            // if (!props) return;
-            // for (const prop of Object.keys(props)) {
-            //     this.$el.setAttribute(prop, props[prop]);
-            // }
+                this.$el.setAttribute(attr, value);
+            }
         },
     },
     mounted() {
-        // if (!this.content.customProps || !this.content.customProps.length) return;
-        // const props = JSON.parse(this.content.customProps);
-        // if (!props) return;
-        // for (const prop of Object.keys(props)) {
-        //     this.$el.setAttribute(prop, props[prop]);
-        // }
+        this.addAttribute();
     },
 };
 </script>
