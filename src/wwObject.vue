@@ -43,8 +43,8 @@ export default {
                 item = 'data-item' + item;
                 let prop = item.split(':');
 
-                const attr = prop[0] ? prop[0].trim() : null;
-                const value = prop[1] ? prop[1].trim() : null;
+                const attr = prop[0] ? prop[0].trim() : '';
+                const value = prop[1] ? prop[1].trim() : '';
 
                 this.$el.setAttribute(attr, value);
             }
