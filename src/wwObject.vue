@@ -37,7 +37,8 @@ export default {
     methods: {
         addAttribute() {
             if (!this.content.customProps || !this.content.customProps.length) return;
-            const props = this.content.customProps.split('data-item');
+            let props = this.content.customProps.split('data-item');
+            props.shift();
 
             for (let item of props) {
                 item = 'data-item' + item;
