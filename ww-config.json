@@ -7,21 +7,25 @@
         "label": {
             "en": "Snipcart button"
         },
-        "menuOptions": {},
-        "styleOptions": {},
         "settingsOptions": {
             "id": {
                 "label": {
                     "en": "Id"
                 },
-                "type": "Textarea",
+                "options": {
+                    "placeholder": "ID"
+                },
+                "type": "Text",
                 "bindable": true
             },
             "url": {
                 "label": {
                     "en": "Url"
                 },
-                "type": "Textarea",
+                "options": {
+                    "placeholder": "url"
+                },
+                "type": "Text",
                 "bindable": true
             },
             "name": {
@@ -35,7 +39,7 @@
                 "label": {
                     "en": "Price"
                 },
-                "type": "Textarea",
+                "type": "Text",
                 "bindable": true
             },
             "description": {
@@ -50,6 +54,12 @@
                     "en": "Snipcart image"
                 },
                 "type": "Image",
+                "bindable": true
+            },
+            "customProps": {
+                "path": "customProps",
+                "label": { "en": "Custom props", "fr": "Custom props" },
+                "type": "Textarea",
                 "bindable": true
             }
         }
