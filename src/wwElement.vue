@@ -1,7 +1,7 @@
 <template>
-    <wwObject
+    <wwElement
         v-bind="content.button"
-        :wwProps="{}"
+        :ww-props="{}"
         class="snipcart-add-item"
         :data-item-id="content.id"
         :data-item-url="content.url"
@@ -10,7 +10,7 @@
         :data-item-image="content.image"
         :data-item-name="content.name"
     >
-    </wwObject>
+    </wwElement>
 </template>
 
 <script>
@@ -34,27 +34,22 @@ export default {
             this.addAttribute();
         },
     },
+    mounted() {
+        this.addAttribute();
+    },
     methods: {
         addAttribute() {
             if (!this.content.customProps || !this.content.customProps.length) return;
             let props = this.content.customProps.split('data-item');
             props.shift();
-
             for (let item of props) {
                 item = 'data-item' + item;
-                let prop = item.split(':');
-
+                const prop = item.split(':');
                 const attr = prop[0] ? prop[0].trim() : '';
                 const value = prop[1] ? prop[1].trim() : '';
-
                 this.$el.setAttribute(attr, value);
             }
         },
     },
-    mounted() {
-        this.addAttribute();
-    },
 };
 </script>
-
-<style lang="scss" scoped></style>
