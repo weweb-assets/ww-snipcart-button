@@ -2,7 +2,7 @@
     "name": "ww-snipcart-button",
     "repository": {
         "type": "git",
-        "url": "https://github.com/weweb-assets/vue-starter"
+        "url": "https://github.com/weweb-assets/ww-snipcart-button"
     },
     "version": "3.0.0",
     "license": "MIT",
