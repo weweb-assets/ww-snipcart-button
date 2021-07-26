@@ -47,7 +47,9 @@ export default {
                 const prop = item.split(':');
                 const attr = prop[0] ? prop[0].trim() : '';
                 const value = prop[1] ? prop[1].trim() : '';
-                this.$el.setAttribute(attr, value);
+                
+                if(this.$el.setAttribute) this.$el.setAttribute(attr, value);
+                else if(this.$el.nextElementSibling) this.$el.nextElementSibling.setAttribute(attr, value);                
             }
         },
     },
