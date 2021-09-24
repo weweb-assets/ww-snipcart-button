@@ -18,17 +18,6 @@ export default {
     props: {
         content: { type: Object, required: true },
     },
-    wwDefaultContent: {
-        button: wwLib.element({ type: 'ww-button', content: { text: { en: 'Add to cart' } } }),
-        itemId: 'mr-toucan',
-        url: '/MrToucan',
-        name: 'Mr. Toucan',
-        price: '99.99',
-        description:
-            'The toco toucan (Ramphastos toco), also known as the common toucan or giant toucan, is the largest and probably the best known species in the toucan family. It is found in semi-open habitats throughout a large part of central and eastern South America. It is a common attraction in zoos.',
-        image: null,
-        customProps: '',
-    },
     watch: {
         'content.customProps'() {
             this.addAttribute();
