@@ -6,62 +6,6 @@ export default {
         label: {
             en: 'Snipcart button',
         },
-        settingsOptions: {
-            id: {
-                label: {
-                    en: 'Id',
-                },
-                options: {
-                    placeholder: 'ID',
-                },
-                type: 'Text',
-                bindable: true,
-            },
-            url: {
-                label: {
-                    en: 'Url',
-                },
-                options: {
-                    placeholder: 'url',
-                },
-                type: 'Text',
-                bindable: true,
-            },
-            name: {
-                label: {
-                    en: 'Name',
-                },
-                type: 'Textarea',
-                bindable: true,
-            },
-            price: {
-                label: {
-                    en: 'Price',
-                },
-                type: 'Text',
-                bindable: true,
-            },
-            description: {
-                label: {
-                    en: 'Description',
-                },
-                type: 'Textarea',
-                bindable: true,
-            },
-            image: {
-                label: {
-                    en: 'Snipcart image',
-                },
-                type: 'Image',
-                bindable: true,
-            },
-            customProps: {
-                path: 'customProps',
-                label: { en: 'Custom props', fr: 'Custom props' },
-                type: 'Textarea',
-                bindable: true,
-            },
-        },
     },
     properties: {
         button: {
