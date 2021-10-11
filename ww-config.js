@@ -1,11 +1,9 @@
 export default {
-    options: {
-        autoByContent: true,
-    },
     editor: {
         label: {
             en: 'Snipcart button',
         },
+        icon: 'fontawesome/regular/shopping-cart'
     },
     properties: {
         button: {
