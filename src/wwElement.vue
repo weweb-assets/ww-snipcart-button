@@ -1,16 +1,17 @@
 <template>
-    <wwElement
-        v-bind="content.button"
-        :ww-props="{}"
-        class="snipcart-add-item"
-        :data-item-id="content.id"
-        :data-item-url="content.url"
-        :data-item-price="content.price"
-        :data-item-description="content.description"
-        :data-item-image="content.image"
-        :data-item-name="content.name"
-    >
-    </wwElement>
+    <div>
+        <wwElement
+            v-bind="content.button"
+            class="snipcart-add-item"
+            :data-item-id="content.id"
+            :data-item-url="content.url"
+            :data-item-price="content.price"
+            :data-item-description="content.description"
+            :data-item-image="content.image"
+            :data-item-name="content.name"
+        >
+        </wwElement>
+    </div>
 </template>
 
 <script>
@@ -36,9 +37,9 @@ export default {
                 const prop = item.split(':');
                 const attr = prop[0] ? prop[0].trim() : '';
                 const value = prop[1] ? prop[1].trim() : '';
-                
-                if(this.$el.setAttribute) this.$el.setAttribute(attr, value);
-                else if(this.$el.nextElementSibling) this.$el.nextElementSibling.setAttribute(attr, value);                
+
+                if (this.$el.setAttribute) this.$el.setAttribute(attr, value);
+                else if (this.$el.nextElementSibling) this.$el.nextElementSibling.setAttribute(attr, value);
             }
         },
     },

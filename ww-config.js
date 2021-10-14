@@ -3,12 +3,12 @@ export default {
         label: {
             en: 'Snipcart button',
         },
-        icon: 'fontawesome/regular/shopping-cart'
+        icon: 'fontawesome/solid/shopping-cart',
     },
     properties: {
         button: {
             hidden: true,
-            defaultValue: { isWwObject: true, type: 'ww-button', content: { text: { en: 'Add to cart' } } },
+            defaultValue: { isWwObject: true, type: 'ww-button' },
         },
         id: {
             label: {
