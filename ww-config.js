@@ -8,7 +8,7 @@ export default {
     properties: {
         button: {
             hidden: true,
-            defaultValue: { isWwObject: true, type: 'ww-button' },
+            defaultValue: { isWwObject: true, type: 'ww-button', content: { text: { en: 'Add to cart' } } },
         },
         id: {
             label: {
