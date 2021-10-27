@@ -10,7 +10,7 @@
         v-bind="properties"
         :class="{ editing: isEditing, selected: isSelected }"
     >
-        <wwElement v-bind="content.button" class="snipcart-add-item"> </wwElement>
+        <wwElement v-bind="content.button"></wwElement>
         <!-- wwEditor:start -->
         <div class="ww-snipcart-button__menu">
             <wwEditorIcon small name="fontawesome/solid/shopping-cart" />
