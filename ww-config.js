@@ -84,7 +84,6 @@ export default {
                             property: {
                                 type: 'Text',
                                 options: { placeholder: 'Property' },
-                                bindable: true,
                                 defaultValue: '',
                             },
                             value: {
