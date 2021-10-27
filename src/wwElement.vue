@@ -1,17 +1,16 @@
 <template>
-    <div class="ww-snipcart-button" :class="{ editing: isEditing, selected: isSelected }">
-        <wwElement
-            v-bind="content.button"
-            class="snipcart-add-item"
-            :data-item-id="content.id"
-            :data-item-url="content.url"
-            :data-item-price="content.price"
-            :data-item-description="content.description"
-            :data-item-image="content.image"
-            :data-item-name="content.name"
-        >
-        </wwElement>
-
+    <div
+        class="ww-snipcart-button"
+        :data-item-id="content.id"
+        :data-item-url="content.url"
+        :data-item-price="content.price"
+        :data-item-description="content.description"
+        :data-item-image="content.image"
+        :data-item-name="content.name"
+        v-bind="properties"
+        :class="{ editing: isEditing, selected: isSelected }"
+    >
+        <wwElement v-bind="content.button" class="snipcart-add-item"> </wwElement>
         <!-- wwEditor:start -->
         <div class="ww-snipcart-button__menu">
             <wwEditorIcon small name="fontawesome/solid/shopping-cart" />
@@ -43,29 +42,20 @@ export default {
             // eslint-disable-next-line no-unreachable
             return false;
         },
-    },
-    watch: {
-        'content.customProps'() {
-            this.addAttribute();
-        },
-    },
-    mounted() {
-        this.addAttribute();
-    },
-    methods: {
-        addAttribute() {
-            if (!this.content.customProps || !this.content.customProps.length) return;
-            let props = this.content.customProps.split('data-item');
-            props.shift();
-            for (let item of props) {
-                item = 'data-item' + item;
-                const prop = item.split(':');
-                const attr = prop[0] ? prop[0].trim() : '';
-                const value = prop[1] ? prop[1].trim() : '';
+        properties() {
+            if (!this.content.customProps) return {};
+            let props = {};
 
-                if (this.$el.setAttribute) this.$el.setAttribute(attr, value);
-                else if (this.$el.nextElementSibling) this.$el.nextElementSibling.setAttribute(attr, value);
+            for (let item of this.content.customProps) {
+                if (item && item.hasOwnProperty('property')) {
+                    props = {
+                        ...props,
+                        [item.property]: item.value || '',
+                    };
+                }
             }
+
+            return props;
         },
     },
 };

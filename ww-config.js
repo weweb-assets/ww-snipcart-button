@@ -71,13 +71,40 @@ export default {
             section: 'settings',
             defaultValue: null,
         },
+        // customProps: {
+        //     path: 'customProps',
+        //     label: { en: 'Custom props', fr: 'Custom props' },
+        //     type: 'Textarea',
+        //     bindable: true,
+        //     section: 'settings',
+        //     defaultValue: '',
+        // },
         customProps: {
-            path: 'customProps',
             label: { en: 'Custom props', fr: 'Custom props' },
-            type: 'Textarea',
-            bindable: true,
             section: 'settings',
-            defaultValue: '',
+            bindable: true,
+            type: 'Array',
+            options: {
+                item: {
+                    type: 'Object',
+                    options: {
+                        item: {
+                            property: {
+                                type: 'Text',
+                                options: { placeholder: 'Property' },
+                                bindable: true,
+                                defaultValue: '',
+                            },
+                            value: {
+                                type: 'Text',
+                                options: { placeholder: 'Value' },
+                                bindable: true,
+                                defaultValue: '',
+                            },
+                        },
+                    },
+                },
+            },
         },
     },
 };
