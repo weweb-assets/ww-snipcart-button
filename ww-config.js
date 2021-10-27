@@ -71,14 +71,6 @@ export default {
             section: 'settings',
             defaultValue: null,
         },
-        // customProps: {
-        //     path: 'customProps',
-        //     label: { en: 'Custom props', fr: 'Custom props' },
-        //     type: 'Textarea',
-        //     bindable: true,
-        //     section: 'settings',
-        //     defaultValue: '',
-        // },
         customProps: {
             label: { en: 'Custom props', fr: 'Custom props' },
             section: 'settings',
