@@ -1,6 +1,6 @@
 <template>
     <div
-        class="ww-snipcart-button"
+        class="ww-snipcart-button snipcart-add-item"
         :data-item-id="content.id"
         :data-item-url="content.url"
         :data-item-price="content.price"
