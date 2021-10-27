@@ -47,7 +47,7 @@ export default {
             let props = {};
 
             for (let item of this.content.customProps) {
-                if (item && item.hasOwnProperty('property')) {
+                if (item && item.property) {
                     props = {
                         ...props,
                         [item.property]: item.value || '',
