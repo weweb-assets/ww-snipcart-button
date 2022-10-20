@@ -3,7 +3,7 @@ export default {
         label: {
             en: 'Snipcart button',
         },
-        icon: 'fontawesome/solid/shopping-cart',
+        icon: 'shopping-cart',
     },
     properties: {
         button: {
