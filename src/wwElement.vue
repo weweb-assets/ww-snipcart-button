@@ -13,7 +13,7 @@
         <wwElement v-bind="content.button"></wwElement>
         <!-- wwEditor:start -->
         <div class="ww-snipcart-button__menu">
-            <wwEditorIcon small name="fontawesome/solid/shopping-cart" />
+            <wwEditorIcon small name="shopping-cart" />
         </div>
         <!-- wwEditor:end -->
     </div>
